@@ -1,9 +1,8 @@
 language: node_js
 node_js:
-- node
+  - node
 cache: npm
 deploy:
   provider: heroku
   api_key:
     secure: Rwc0ponySHQu/IeyjUrkIa7xB0Q1ZL3K421iqBTjsUrOnkH0mymwTMdp40vEB3bbmTG8nEWdV4JzT9ts5bInt2N63+qrVn/dUDUshMZ5k3zisYVzlFJ/285H+GUyidhOgKpxubwT1jVkOrgtwokVNHpke5fvYgXS+qYwm0IE7qREWAynHnkTWthWsl+BVJaY6za1r4cAYdnZuorUM6U5KkmhmEE4fSG/o5D9XY3UUX6TA3p9bnyEmcS+NmoiWn4CF85BmCgzQjOkw/xC64e+1+Yaep1gOvL1Scn3OMPvvvw3d+ckHnj2cSTBpS4BPabtelqTwGqdMRV1Ux3Nu5C8//y5kTcIZAB3bfXPlsQTPjkNGk2PplY2+NAN8sGb+hAwaJupiKInVVpRgOduxVCp+zdF6PbbvaZwEwTn0lbouznp54eh2n5g94YF9VVxywA5hyKGuD/4KHqs9PmJlVk6YWqYYZiektFs7Oh+E0byAqteqw6UYlJAvS95SbYmB4MYA46ud+3+eqliZsjYSKIAf5r5aCvmz28zaAxFk9iElBk+mPrf5+H7XIi7t8qkgzHgNDzX+C1PCzO9BVKxO71KmfvQN0jl0GAXw9ZFtixFqF7Y5PdaMBFzMw2L78+XhcnF4JSOuM+5oFsn1Dt+c8oh9PK6KscNrb8JcB3Fvj4WtpQ=
-app: septa-view
