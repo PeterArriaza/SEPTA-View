@@ -1,5 +1,6 @@
 const initialState = {
   1: {
+    id: "1",
     line: "Lansdale/Doylestown to Center City",
     start: "Fort Washington",
     end: "Suburban",
@@ -10,6 +11,7 @@ const initialState = {
     nickname: "Back Home"
   },
   2: {
+    id: "2",
     line: "Lansdale/Doylestown to Doylestown",
     start: "Suburban",
     end: "Fort Washington",
@@ -20,6 +22,7 @@ const initialState = {
     nickname: "To Work"
   },
   3: {
+    id: "3",
     line: "Newark to Newark",
     start: "Suburban",
     end: "Newark",
