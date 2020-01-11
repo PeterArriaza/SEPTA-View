@@ -1,0 +1,17 @@
+.card {
+  width: 300px;
+  /* height: 200px; */
+  border: 1px solid black;
+  padding: 5px;
+  margin: 20px;
+}
+
+.cardTitle {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.underlineText {
+  text-decoration: underline;
+  margin-right: 5px;
+}
