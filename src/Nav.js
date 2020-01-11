@@ -6,10 +6,14 @@ export default function Nav() {
     <div id="navContainer">
       <div id="navButtonContainer">
         <div className="navButton">
-          <p className="buttonText">User Action</p>
+          <a href="/" className="buttonText">
+            User Action
+          </a>
         </div>
         <div className="navButton">
-          <p className="buttonText">Log Out</p>
+          <a href="/" className="buttonText">
+            Log Out
+          </a>
         </div>
       </div>
     </div>
