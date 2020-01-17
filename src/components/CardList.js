@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
 
 import Card from "./Card";
 import "../styles/CardList.css";
@@ -15,18 +14,6 @@ function CardList(props) {
   return (
     <div id="cardList">
       <ul>{cards}</ul>
-      <div className="buttonContainer">
-        <NavLink
-          className="buttonText"
-          to="/add-route"
-          activeStyle={{
-            fontWeight: "bold",
-            color: "red"
-          }}
-        >
-          <div className="cancelButton">Add New Route</div>
-        </NavLink>
-      </div>
     </div>
   );
 }

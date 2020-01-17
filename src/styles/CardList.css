@@ -1,3 +1,7 @@
+#cardList {
+  overflow-y: auto;
+}
+
 ul {
   list-style: none;
   display: flex;

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch
-} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import CardList from "./components/CardList";
 import "./styles/App.css";
@@ -12,13 +7,13 @@ import AddRoute from "./components/AddRoute";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="app">
+      <Router>
         <Nav />
         <Route exact path="/" component={CardList} />
         <Route exact path="/add-route" component={AddRoute} />
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

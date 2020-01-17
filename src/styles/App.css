@@ -1,20 +1,3 @@
-/* ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 20px;
-  flex-wrap: wrap;
+.app {
+  overflow: hidden;
 }
-
-3*(300px card with + 40px card margin) = 1140
-@media only screen and (max-width: 1140px) {
-  ul {
-    justify-content: space-evenly;
-  } 
-}
- 2*(300px card with + 40px card margin) = 760
-@media only screen and (max-width: 760px) {
-  ul {
-    justify-content: center;
-  }
-} */

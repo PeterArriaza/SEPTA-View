@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 export default function Nav() {
   return (
     <div id="navContainer">
-      <div id="navButtonContainer">
-        <div className="navButton">
-          <a href="/" className="buttonText">
-            Log Out
-          </a>
-        </div>
-      </div>
+      <Link className="buttonText" to="/add-route">
+        <div className="routerButton blue">Add New Route</div>
+      </Link>
+      <Link className="buttonText" to="/">
+        <div className="routerButton red">Log Out</div>
+      </Link>
     </div>
   );
 }

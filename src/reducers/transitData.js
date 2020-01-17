@@ -12,7 +12,7 @@ const initialState = {
   },
   2: {
     id: "2",
-    line: "Lansdale/Doylestown to Doylestown back to center city philadelphia",
+    line: "Lansdale/Doylestown to Doylestown",
     start: "Suburban",
     end: "Fort Washington",
     depart: "6:30 AM",
@@ -31,29 +31,30 @@ const initialState = {
     status: "0 min late",
     timeToDeparture: "1 hour",
     nickname: "To Mom's"
-  },
-  4: {
-    id: "4",
-    line: "Newark to Newark",
-    start: "Suburban",
-    end: "Newark",
-    depart: "7:14 PM",
-    arrive: "8:15 PM",
-    status: "0 min late",
-    timeToDeparture: "1 hour",
-    nickname: "To Mom's"
-  },
-  5: {
-    id: "5",
-    line: "Newark to Newark",
-    start: "Suburban",
-    end: "Newark",
-    depart: "7:14 PM",
-    arrive: "8:15 PM",
-    status: "0 min late",
-    timeToDeparture: "1 hour",
-    nickname: "To Mom's"
   }
+  // ,
+  // 4: {
+  //   id: "4",
+  //   line: "Newark to Newark",
+  //   start: "Suburban",
+  //   end: "Newark",
+  //   depart: "7:14 PM",
+  //   arrive: "8:15 PM",
+  //   status: "0 min late",
+  //   timeToDeparture: "1 hour",
+  //   nickname: "To Mom's"
+  // },
+  // 5: {
+  //   id: "5",
+  //   line: "Newark to Newark",
+  //   start: "Suburban",
+  //   end: "Newark",
+  //   depart: "7:14 PM",
+  //   arrive: "8:15 PM",
+  //   status: "0 min late",
+  //   timeToDeparture: "1 hour",
+  //   nickname: "To Mom's"
+  // }
 };
 
 export default (state = initialState) => {

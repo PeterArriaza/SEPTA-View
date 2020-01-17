@@ -2,20 +2,25 @@
   background-color: #6dd166;
   display: flex;
   justify-content: flex-end;
-  align-content: center;
-  height: 69px;
-}
-
-#navButtonContainer {
-  display: flex;
   align-items: center;
-}
-
-.navButton {
-  margin: 10px;
+  height: 69px;
 }
 
 .buttonText {
   margin: 0;
   text-decoration: none;
+}
+
+.routerButton {
+  padding: 10px;
+  color: white;
+}
+
+.blue {
+  background-color: #1f4fa3;
+}
+
+.red {
+  background-color: #f14728;
+  margin: 0 20px 0 20px;
 }
