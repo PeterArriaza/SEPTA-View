@@ -9,6 +9,9 @@ export default class AddRoute extends React.Component {
     stops: stopList
   };
 
+  // I think removeStart function assumes that user will fill out starting
+  // location first.  List will not filter destination first.
+  // Not sure what would happen if request sent to API with start/end the same stop
   removeStart = startStop => {
     const stops = [...stopList];
     const filteredList = stops.filter(stop => stop.props.value !== startStop);
@@ -16,34 +19,31 @@ export default class AddRoute extends React.Component {
   };
 
   render() {
-    console.log(this.state.stops);
     return (
-      <div>
+      <div className="addRouteContainer">
         <h1>Add a New Route</h1>
         <div className="selectorContainer">
           <div className="stopSelector">
-            <label>Start</label>
+            <label className="stopLabel">Start</label>
             <select
               id="startStop"
               onChange={e => this.removeStart(e.target.value)}
-              // this.removeStart(e.target.value)}
             >
               {stopList}
             </select>
           </div>
           <div className="stopSelector">
-            <label>Destination</label>
-            <select
-              id="startStop"
-              ref={input => (this.startStop = input)}
-              onChange={() => console.log("changed")}
-            >
+            <label className="stopLabel">Destination</label>
+            <select id="startStop" onChange={() => console.log("changed")}>
               {this.state.stops}
             </select>
           </div>
-          <Link className="cancel" to="/">
-            Cancel
-          </Link>
+          <div className="buttonRow">
+            <Link className="cancel" to="/">
+              <div className="cancelContainer">Cancel</div>
+            </Link>
+            <div className="addRouteButton">Add Route</div>
+          </div>
         </div>
       </div>
     );

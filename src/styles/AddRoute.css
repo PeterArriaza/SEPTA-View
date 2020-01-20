@@ -1,7 +1,50 @@
+.addRouteContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0 30px 0;
+  align-self: center;
+  align-content: space-between;
+  align-items: center;
+}
+
+.addRouteButton {
+  display: inline-block;
+  width: 80px;
+  padding: 10px;
+  background: #96969969;
+  text-align: center;
+}
+
+.stopSelector {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.stopLabel {
+  margin-right: 20px;
+}
+
+.buttonRow {
+  margin-top: 40px;
+}
+
 .cancel {
   text-decoration: none;
+  color: black;
+  padding: 20px;
 }
 
 .cancel:visited {
   text-decoration: none;
+  color: black;
+}
+
+.cancelContainer {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px;
+  width: 80px;
+  background: #96969969;
+  text-align: center;
 }
