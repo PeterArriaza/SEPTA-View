@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import Card from "./Card";
 import "../styles/CardList.css";
@@ -14,6 +15,9 @@ function CardList(props) {
   return (
     <div id="cardList">
       <ul>{cards}</ul>
+      <Link className="buttonText" to="/add-route">
+        <div className="routerButton blue">Add New Route</div>
+      </Link>
     </div>
   );
 }

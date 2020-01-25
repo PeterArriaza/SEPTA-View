@@ -1,3 +1,5 @@
+import { CREATE_NEW_CARD } from "../actions";
+
 const initialState = {
   1: {
     id: "1",

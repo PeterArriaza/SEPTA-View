@@ -14,6 +14,7 @@ sortedStops.map((stop, index) => {
       {stop}
     </option>
   );
+  return stopList;
 });
 
 export default stopList;
