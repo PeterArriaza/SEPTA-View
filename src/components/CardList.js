@@ -12,6 +12,8 @@ function CardList(props) {
     </li>
   ));
 
+  console.log(props.transitData);
+
   return (
     <div id="cardList">
       <ul>{cards}</ul>

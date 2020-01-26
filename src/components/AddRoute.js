@@ -1,10 +1,12 @@
 import React from "react";
 import "../styles/AddRoute.css";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { createNewCard } from "../actions";
 
 import stopList from "../reducers/stops";
 
-export default class AddRoute extends React.Component {
+export class AddRoute extends React.Component {
   state = {
     stops: stopList,
     start: "",
@@ -45,10 +47,15 @@ export default class AddRoute extends React.Component {
     // https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe
     const url = `https://www3.septa.org/hackathon/NextToArrive/${startURI}/${endURI}/3`;
     const proxy = "https://cors-anywhere.herokuapp.com/";
-    fetch(proxy + url)
-      .then(res => res.json())
-      .then(data => this.setState({ stopData: data }))
-      .catch(err => console.log(err));
+    const cardUrl = proxy + url;
+    // fetch(proxy + url)
+    //   .then(res => res.json())
+    //   .then(data => this.setState({ stopData: data }))
+    //   .catch(err => console.log(err));
+    this.props.dispatch(
+      createNewCard(cardUrl, this.state.start, this.state.end, "newCard")
+    );
+    this.props.history.push("/");
   };
 
   render() {
@@ -97,3 +104,9 @@ export default class AddRoute extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  transitData: Object.keys(state).map(item => state[item])
+});
+
+export default connect(mapStateToProps)(AddRoute);
