@@ -11,7 +11,8 @@ export class AddRoute extends React.Component {
     stops: stopList,
     start: "",
     end: "",
-    stopData: []
+    stopData: [],
+    nickname: ""
   };
 
   // I think removeStart function assumes that user will fill out starting
@@ -53,7 +54,12 @@ export class AddRoute extends React.Component {
     //   .then(data => this.setState({ stopData: data }))
     //   .catch(err => console.log(err));
     this.props.dispatch(
-      createNewCard(cardUrl, this.state.start, this.state.end, "newCard")
+      createNewCard(
+        cardUrl,
+        this.state.start,
+        this.state.end,
+        this.state.nickname
+      )
     );
     this.props.history.push("/");
   };
@@ -88,16 +94,16 @@ export class AddRoute extends React.Component {
             <label className="nicknameLabel">Nickname (optional)</label>
             <input
               type="text"
-              // ref={input => (this.nickname = input)}
+              onChange={e => this.setState({ nickname: e.target.value })}
             ></input>
           </div>
           <div className="buttonRow">
             <Link className="cancel" to="/">
               <div className="cancelContainer">Cancel</div>
             </Link>
-            <div className="addRouteButton" onClick={this.addRoute}>
+            <button className="addRouteButton" onClick={this.addRoute}>
               Add Route
-            </div>
+            </button>
           </div>
         </div>
       </div>
