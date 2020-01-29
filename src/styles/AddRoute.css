@@ -63,3 +63,16 @@ select {
   box-sizing: border-box;
   width: 200px;
 }
+
+.addRouteContainer {
+  padding: 10px;
+}
+
+@media only screen and (max-width: 420px) {
+  .stopForm {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    align-items: center;
+  }
+}
