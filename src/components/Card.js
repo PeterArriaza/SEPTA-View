@@ -26,31 +26,43 @@ export default class Card extends React.Component {
             if (isLoading) return "Loading...";
             if (err) return `Something went wrong: ${err.message}`;
             if (data) {
+              console.log(data);
               const train0 = data[0];
               const train1 = data[1];
               const train2 = data[2];
+              const connection =
+                data[0].isdirect === "true" ? "None" : data[0].Connection;
               return (
                 <div className="card">
-                  <p className="cardTitle">{this.props.nickname}</p>
-                  {/* <p>{train0.orig_line}</p> */}
+                  <div className="cardHeading">
+                    <p className="cardTitle">{this.props.nickname}</p>
+                    <p className="trainLine">Line: {train0.orig_line}</p>
+                    <p>From: {this.props.start}</p>
+                    <p>To: {this.props.end}</p>
+                    <p>Connection: {connection}</p>
+                  </div>
                   <table>
                     <thead>
-                      <tr>
+                      <tr className="trainTimes">
+                        <th>Depart:</th>
                         <th>Arrive:</th>
                         <th>Delay:</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                      <tr className="trainTimes">
                         <td>{train0.orig_departure_time}</td>
+                        <td>{train0.orig_arrival_time}</td>
                         <td>{train0.orig_delay}</td>
                       </tr>
-                      <tr>
+                      <tr className="trainTimes">
                         <td>{train1.orig_departure_time}</td>
+                        <td>{train0.orig_arrival_time}</td>
                         <td>{train1.orig_delay}</td>
                       </tr>
-                      <tr>
+                      <tr className="trainTimes">
                         <td>{train2.orig_departure_time}</td>
+                        <td>{train0.orig_arrival_time}</td>
                         <td>{train2.orig_delay}</td>
                       </tr>
                     </tbody>

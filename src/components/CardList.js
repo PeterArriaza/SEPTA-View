@@ -7,16 +7,16 @@ import "../styles/CardList.css";
 
 function CardList(props) {
   const cards = props.transitData.map(item => (
-    <li key={item.id}>
-      <Card {...item} />
-    </li>
+    // <li >
+    <Card key={item.id} {...item} />
+    // </li>
   ));
 
-  console.log(props.transitData);
-
   return (
-    <div id="cardList">
-      <ul>{cards}</ul>
+    <div id="cardListContainer">
+      {/* <ul> */}
+      <div className="cardList">{cards}</div>
+      {/* </ul> */}
       <Link className="buttonText" to="/add-route">
         <div className="routerButton blue">Add New Route</div>
       </Link>
@@ -25,7 +25,8 @@ function CardList(props) {
 }
 
 const mapStateToProps = state => ({
-  transitData: Object.keys(state).map(item => state[item])
+  transitData: state
+  // transitData: Object.keys(state).map(item => state[item])
 });
 
 export default connect(mapStateToProps)(CardList);

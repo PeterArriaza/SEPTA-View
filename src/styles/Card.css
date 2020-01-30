@@ -15,3 +15,16 @@
   text-decoration: underline;
   margin-right: 5 px;
 }
+
+.cardHeading {
+  line-height: 0.75em;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th {
+  text-align: left;
+}

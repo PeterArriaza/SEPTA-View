@@ -2,7 +2,7 @@
   /* overflow-y: auto; */
 }
 
-ul {
+.cardList {
   list-style: none;
   display: flex;
   justify-content: space-evenly;
@@ -39,6 +39,7 @@ ul {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  margin-top: 50px;
 }
 
 /* 3*(300px card with + 40px card margin) = 1140
