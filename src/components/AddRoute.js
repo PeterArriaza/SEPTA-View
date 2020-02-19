@@ -15,7 +15,7 @@ export class AddRoute extends React.Component {
     nickname: ""
   };
 
-  // I think removeStart function assumes that user will fill out starting
+  // removeStart function assumes that user will fill out starting
   // location first.  List will not filter destination first.
   // Not sure what would happen if request sent to API with start/end the same stop
   removeStart = startStop => {
@@ -34,35 +34,46 @@ export class AddRoute extends React.Component {
   };
 
   addRoute = () => {
-    const start = this.state.start;
-    const end = this.state.end;
-    // if ()const nickname = this.nickname.value.trim();
-    // console.log(start, end, nickname);
+    const { start, end, nickname } = { ...this.state };
     if (start === "" || end === "") {
       return console.log("error in form");
     }
     const startURI = encodeURIComponent(start.trim());
     const endURI = encodeURIComponent(end.trim());
+    nickname.trim();
 
     // so apparently I need to use a CORS proxy to access this septa endpoint...
     // https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe
     const url = `https://www3.septa.org/hackathon/NextToArrive/${startURI}/${endURI}/3`;
     const proxy = "https://cors-anywhere.herokuapp.com/";
     const cardUrl = proxy + url;
-    // fetch(proxy + url)
-    //   .then(res => res.json())
-    //   .then(data => this.setState({ stopData: data }))
-    //   .catch(err => console.log(err));
-    this.props.dispatch(
-      createNewCard(
-        cardUrl,
-        this.state.start,
-        this.state.end,
-        this.state.nickname
-      )
-    );
+
+    this.props.dispatch(createNewCard(cardUrl, start, end, nickname));
     this.props.history.push("/");
   };
+
+  // async function postData(url = '', data = {}) {
+  //   // Default options are marked with *
+  //   const response = await fetch(url, {
+  //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+  //     mode: 'cors', // no-cors, *cors, same-origin
+  //     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+  //     credentials: 'same-origin', // include, *same-origin, omit
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //       // 'Content-Type': 'application/x-www-form-urlencoded',
+  //     },
+  //     redirect: 'follow', // manual, *follow, error
+  //     referrerPolicy: 'no-referrer', // no-referrer, *client
+  //     body: JSON.stringify(data) // body data type must match "Content-Type" header
+  //   });
+  //   return await response.json(); // parses JSON response into native JavaScript objects
+  // }
+
+  // postData('https://example.com/answer', { answer: 42 })
+  //   .then((data) => {
+  //     console.log(data); // JSON data parsed by `response.json()` call
+  //   });
 
   render() {
     return (
@@ -74,8 +85,6 @@ export class AddRoute extends React.Component {
             <select
               value={this.state.startStop}
               onChange={e => this.handleStartChange(e.target.value)}
-              // removeStart(e.target.value)}
-              // ref={input => (this.startStop = input.target.value)}
             >
               {stopList}
             </select>
@@ -85,7 +94,6 @@ export class AddRoute extends React.Component {
             <select
               value={this.state.startStop}
               onChange={e => this.handleEndChange(e.target.value)}
-              // ref={input => (this.endStop = input)}
             >
               {this.state.stops}
             </select>

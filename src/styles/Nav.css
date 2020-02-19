@@ -1,7 +1,7 @@
 #navContainer {
   background-color: #6dd166;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   height: 69px;
 }
@@ -23,4 +23,9 @@
 .red {
   background-color: #f14728;
   margin: 0 20px 0 20px;
+}
+
+img {
+  height: 59px;
+  margin-left: 20px;
 }
