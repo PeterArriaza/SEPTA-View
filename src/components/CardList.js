@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Card from "./Card";
 import "../styles/CardList.css";
 
-function CardList(props) {
+export function CardList(props) {
   const cards = props.transitData.map(item => (
     // <li >
     <Card key={item.id} {...item} />
